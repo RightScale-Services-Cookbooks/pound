@@ -4,3 +4,8 @@ default[:pound][:backend][:port]="8000"
 
 default[:pound][:inc_files]=["/etc/pound.d/backend.cfg"]
 
+default[:pound][:ssl][:key]=""
+default[:pound][:ssl][:cert]=""
+default[:pound][:ssl][:chain]=""
+
+
