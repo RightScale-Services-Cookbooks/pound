@@ -2,4 +2,6 @@ User "pound"
 Group "pound"
 Control "/var/lib/pound/pound.cfg"
 
-Include "/etc/pound.d/*.cfg"
+<% @include_files_list.each do |inc| %>
+Include "<%= inc %>"
+<% end %>
