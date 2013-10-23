@@ -32,7 +32,7 @@ template "/etc/pound.cfg" do
   owner "root"
   group "root"
   mode "0644"
-  variables( :include_file_list => node[:pound][:inc_files] )
+  variables( :include_files_list => node[:pound][:inc_files] )
   action :create
 end
 
