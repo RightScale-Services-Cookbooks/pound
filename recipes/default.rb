@@ -16,7 +16,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-package "pound" do
+package "Pound" do
   action :install
 end
 
+directory "/etc/pound.d" do
+  owner "root"
+  group "root"
+  mode "755"
+  action :create
+end
+
+template "/etc/pound.cfg" do
+  source "pound.cfg.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+end
+
+template "/etc/pound.d/backend.cfg" do
+  source "backend.cfg.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  variables( :backend_host => node[:pound][:backend][:host],
+             :backend_port => node[:pound][:backend][:port] )
+
+  action :create
+end

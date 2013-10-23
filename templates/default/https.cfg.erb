@@ -1,0 +1,14 @@
+ListenHTTPS
+    Address 0.0.0.0
+    Port    443
+    Cert    "/etc/pki/tls/certs/pound.pem"
+
+    #Set X-Forwarded-Proto so backends know this is https
+    HeadRemove "X-Forwarded-Proto"
+    AddHeader "X-Forwarded-Proto:https"
+
+    #Set xHTTP level
+    xHTTP <%= @xhttp %>
+    
+End
+
