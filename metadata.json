@@ -20,6 +20,45 @@
   "replacing": {
   },
   "attributes": {
+    "pound/ssl/chain": {
+      "display_name": "Pound SSL Chainfile",
+      "description": "Pound SSL Chainfile",
+      "required": "required",
+      "recipes": [
+        "pound::setup_https"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "pound/ssl/key": {
+      "display_name": "Pound SSL Key",
+      "description": "Pound SSL Key",
+      "required": "required",
+      "recipes": [
+        "pound::setup_https"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
+    "pound/ssl/cert": {
+      "display_name": "Pound SSL Certificate",
+      "description": "Pound SSL Certificate",
+      "required": "required",
+      "recipes": [
+        "pound::setup_https"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    }
   },
   "groupings": {
   },
@@ -28,5 +67,5 @@
     "pound::setup_http": "sets up http frontend",
     "pound::setup_https": "sets up https frontend"
   },
-  "version": "0.1.1"
+  "version": "0.1.2"
 }
