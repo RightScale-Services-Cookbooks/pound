@@ -23,6 +23,7 @@ template "/etc/pound.d/https.cfg" do
   owner "root"
   group "root"
   mode "0644"
+  variables( :xhttp => node[:pound][:xhttp] )
   action :create
 end
 
