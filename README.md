@@ -70,7 +70,9 @@ Recipes
 ==============
 
 pound::default
+
 pound::setup_http
+
 pound::setup_https
 
 
@@ -78,12 +80,16 @@ Usage
 ==============
 TODO: Write usage instructions for each cookbook.
 For SSL enablement with Varnish you will need the following:
+
 pound::default
+
 pound::setup_https
+
   The following inputs will have to be updated with their values:
   	SSL KEY
   	SSL Cert
   	SSL Chain
+  	
 
 Contributing
 ==============
