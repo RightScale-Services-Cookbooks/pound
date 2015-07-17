@@ -32,6 +32,7 @@ TODO: List your cookbook requirements. Be sure to include any requirements this 
 The following code block needs to be added to the Varnish VCL:
 # Getting Varnish and Pound to play nicely required the vcl_hash block below
 # https://www.adammalone.net/post/why-pound-awesome-front-varnish#.VaZwh6bDTef
+
 sub vcl_hash 
  {
  hash_data(req.url);
@@ -52,19 +53,24 @@ sub vcl_hash
 Attributes
 ==============
 TODO: List you cookbook attributes here.
+
 default[:pound][:xhttp]="1"
+
 default[:pound][:backend][:host]="127.0.0.1"
+
 default[:pound][:backend][:port]="8000"
-Backend application running on port 8000
+ Backend application running on port 8000
 
 default[:pound][:inc_files]=["/etc/pound.d/backend.cfg"]
 
 default[:pound][:ssl][:key]=""
-The SSL Key
+ The SSL Key
+ 
 default[:pound][:ssl][:cert]=""
-The SSL Cert
+ The SSL Cert
+ 
 default[:pound][:ssl][:chain]=""
-The SSL chain
+ The SSL chain
 
 Recipes
 ==============
