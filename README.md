@@ -26,14 +26,15 @@ WHAT POUND IS NOT:
     2.Pound is not a Web accelerator: no caching is done - every request is passed "as is" to a back-end server.
 
 Requirements
-------------
+==============
 TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
 The following code block needs to be added to the Varnish VCL:
 # Getting Varnish and Pound to play nicely required the vcl_hash block below
-#https://www.adammalone.net/post/why-pound-awesome-front-varnish#.VaZwh6bDTef
-sub vcl_hash {
-  hash_data(req.url);
+# https://www.adammalone.net/post/why-pound-awesome-front-varnish#.VaZwh6bDTef
+sub vcl_hash 
+ {
+ hash_data(req.url);
   if (req.http.host) {
     hash_data(req.http.host);
   } 
@@ -49,7 +50,7 @@ sub vcl_hash {
 }
 
 Attributes
-----------
+==============
 TODO: List you cookbook attributes here.
 default[:pound][:xhttp]="1"
 default[:pound][:backend][:host]="127.0.0.1"
@@ -66,13 +67,14 @@ default[:pound][:ssl][:chain]=""
 The SSL chain
 
 Recipes
------
+==============
 
 pound::default
 pound::setup_http
 pound::setup_https
------
-#### pound::default
+
+Usage
+==============
 TODO: Write usage instructions for each cookbook.
 For SSL enablement with Varnish you will need the following:
 pound::default
@@ -82,10 +84,8 @@ pound::setup_https
   	SSL Cert
   	SSL Chain
 
-```
-
 Contributing
-------------
+==============
 TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
 e.g.
@@ -97,5 +97,5 @@ e.g.
 6. Submit a Pull Request using Github
 
 License and Authors
--------------------
+==============
 Author:: RightScale, Inc. (cookbooks@rightscale.com)
