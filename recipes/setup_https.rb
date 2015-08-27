@@ -17,7 +17,7 @@ template "/etc/pound.d/ssl/cert.pem" do
   only_if { node[:pound][:ssl][:cert] }
 end
 
-node[:pound][:inc_files]<<'/etc/pound.d/https.cfg'
+node normal[:pound][:inc_files]<<'/etc/pound.d/https.cfg'
 template "/etc/pound.d/https.cfg" do
   source "https.cfg.erb"
   owner "root"
