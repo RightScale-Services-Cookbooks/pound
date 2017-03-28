@@ -9,6 +9,8 @@ issues_url       'https://github.com/RightScale-Services-Cookbooks/pound/issues'
 source_url       'https://github.com/RightScale-Services-Cookbooks/pound'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
+depends 'yum-epel'
+
 recipe 'pound::default', 'installs and configures pound'
 recipe 'pound::setup_http', 'sets up http frontend'
 recipe 'pound::setup_https', 'sets up https frontend'
