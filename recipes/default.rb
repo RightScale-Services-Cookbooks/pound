@@ -20,7 +20,11 @@ include_recipe 'yum-epel'
 
 package 'Pound' do
   action :install
-end
+end unless node['platform_family'] == 'debian'
+
+package 'pound' do
+  action :install
+end unless node['platform_family'] == 'rhel'
 
 directory '/etc/pound.d' do
   owner 'root'
